@@ -1,0 +1,19 @@
+	;delay and toggle P1
+	L3:		MOV P1,#55H ; SET ODD BITS OD P1
+			LCALL DELAY ; CALLS DELAY
+			MOV P1,#0AAH ; SETS EVEN BITS OF P1
+			LCALL DELAY
+			SJMP L3 ;REPEATS THE PROGRAM
+	
+	DELAY:  MOV R2,#02H		;CREATES A SEC DELAY 
+	L2:	    MOV R1,#0FFH
+	L1:	    MOV R3,#0FFH
+	L4:     MOV R4,#0FFH
+	L5:     DJNZ R4,L5
+		    DJNZ R3,L4
+		    DJNZ R1,L1
+		    DJNZ R2,L2
+		    RET
+		   
+			END
+			   
