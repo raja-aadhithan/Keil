@@ -7,22 +7,32 @@ ARM Macro Assembler    Page 1
     1 00000000                 AREA             PROGRAM, CODE, READONLY
     2 00000000                 ENTRY
     3 00000000         MAIN
-    4 00000000 E59F0010        LDR              R0, =0x00120011
+    4 00000000 E59F0024        LDR              R0, =0x00120011
     5 00000004 E3A01003        LDR              R1, =0x00000003
-    6 00000008 E59F200C        LDR              R2, VALUE1
-    7 0000000C E59F300C        LDR              R3, VALUE2
-    8 00000010 E0804001        ADD              R4, R0, R1  ;immediate addressi
+    6 00000008 E59F2020        LDR              R2, VALUE1
+    7 0000000C E59F3020        LDR              R3, VALUE2
+    8 00000010 E59F4020        LDR              R4, MEM1
+    9 00000014 E59F5020        LDR              R5, MEM2
+   10 00000018 E5946000        LDR              R6, [R4]
+   11 0000001C E5957000        LDR              R7, [R5]
+   12 00000020 E0808001        ADD              R8, R0, R1  ;immediate addressi
                                                             ng
-    9 00000014 E0825003        ADD              R5, R2, R3  ;direct addressing
-   10 00000018         
-   11 00000018 00120011        AREA             PROGRAM, DATA, READONLY
-   12 0000001C 00120011 
+   13 00000024 E0829003        ADD              R9, R2, R3  ;direct addressing
+   14 00000028 E086A007        ADD              R10, R6, R7 ;indirect addressin
+                                                            g 
+   15 0000002C         
+   16 0000002C 00120011        AREA             PROGRAM, DATA, READONLY
+   17 00000030 00120011 
                        VALUE1  DCD              &00120011   ; DCD = Define Cons
                                                             tant Double word
-   13 00000020 00000003 
+   18 00000034 00000003 
                        VALUE2  DCD              &00000003
-   14 00000024         
-   15 00000024                 END
+   19 00000038 00000030 
+                       MEM1    DCD              &00000030
+   20 0000003C 00000034 
+                       MEM2    DCD              &00000034
+   21 00000040         
+   22 00000040                 END
 Command Line: --debug --xref --bi --apcs=interwork --depend=EXP1B.d -oEXP1B.o -
 IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
 -list=EXP1B.lst EXP1B.asm
@@ -40,6 +50,22 @@ Symbol: MAIN
    Uses
       None
 Comment: MAIN unused
+MEM1 00000038
+
+Symbol: MEM1
+   Definitions
+      At line 19 in file EXP1B.asm
+   Uses
+      At line 8 in file EXP1B.asm
+Comment: MEM1 used once
+MEM2 0000003C
+
+Symbol: MEM2
+   Definitions
+      At line 20 in file EXP1B.asm
+   Uses
+      At line 9 in file EXP1B.asm
+Comment: MEM2 used once
 PROGRAM 00000000
 
 Symbol: PROGRAM
@@ -48,21 +74,21 @@ Symbol: PROGRAM
    Uses
       None
 Comment: PROGRAM unused
-VALUE1 0000001C
+VALUE1 00000030
 
 Symbol: VALUE1
    Definitions
-      At line 12 in file EXP1B.asm
+      At line 17 in file EXP1B.asm
    Uses
       At line 6 in file EXP1B.asm
 Comment: VALUE1 used once
-VALUE2 00000020
+VALUE2 00000034
 
 Symbol: VALUE2
    Definitions
-      At line 13 in file EXP1B.asm
+      At line 18 in file EXP1B.asm
    Uses
       At line 7 in file EXP1B.asm
 Comment: VALUE2 used once
-4 symbols
-337 symbols in table
+6 symbols
+339 symbols in table
