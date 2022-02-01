@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F000C        LDR              R0, VALUE1
+    5 00000004 E59F100C        LDR              R1, VALUE2
+    6 00000008 E5902000        LDR              R2, [R0]    ;R6 is loaded with 
+                                                            data on memory loca
+                                                            tion pointer by R4:
+                                                            =(R2)
+    7 0000000C E5913000        LDR              R3, [R1]    ;R7 is loaded with 
+                                                            data on memory loca
+                                                            tion pointer by R5:
+                                                            =(R3)
+    8 00000010 E0824003        ADD              R4, R2, R3  ;immediate addressi
+                                                            ng
+    9 00000014         
+   10 00000014                 AREA             PROGRAM, DATA, READONLY
+   11 00000014 00000000 
+                       VALUE1  DCD              &00000000   ; DCD = Define Cons
+                                                            tant Double word
+   12 00000018 00000004 
+                       VALUE2  DCD              &00000004
+   13 0000001C         
+   14 0000001C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP1_indirect.d -oE
+XP1_indirect.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="
+__EVAL SETA 1" --list=EXP1_indirect.lst EXP1_indirect.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP1_indirect.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP1_indirect.asm
+   Uses
+      None
+Comment: PROGRAM unused
+VALUE1 00000014
+
+Symbol: VALUE1
+   Definitions
+      At line 11 in file EXP1_indirect.asm
+   Uses
+      At line 4 in file EXP1_indirect.asm
+Comment: VALUE1 used once
+VALUE2 00000018
+
+Symbol: VALUE2
+   Definitions
+      At line 12 in file EXP1_indirect.asm
+   Uses
+      At line 5 in file EXP1_indirect.asm
+Comment: VALUE2 used once
+4 symbols
+335 symbols in table
