@@ -7,8 +7,10 @@ ARM Macro Assembler    Page 1
     1 00000000                 AREA             PROGRAM, CODE, READONLY
     2 00000000                 ENTRY
     3 00000000         MAIN
-    4 00000000 E3A00001        LDR              R0,=0x00000001
-    5 00000004 E1A01100        MOV              R1,R0,LSL#0x02
+    4 00000000 E3A00001        LDR              R0,=0x00000001 ;LOAD R0 WITH VA
+                                                            LUE 1
+    5 00000004 E1A01100        MOV              R1,R0,LSL#0x02 ;SHIFT 1 TWO TIM
+                                                            ES AN STORE IN R1
     6 00000008                 END
 Command Line: --debug --xref --bi --apcs=interwork --depend=Exp2_1.d -oExp2_1.o
  -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1"

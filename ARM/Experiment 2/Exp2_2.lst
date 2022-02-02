@@ -7,9 +7,13 @@ ARM Macro Assembler    Page 1
     1 00000000                 AREA             PROGRAM, CODE, READONLY
     2 00000000                 ENTRY
     3 00000000         MAIN
-    4 00000000 E3A00001        LDR              R0, =0x00000001
-    5 00000004 E3A01003        LDR              R1, =0x00000003
-    6 00000008 E1A02110        MOV              R2,R0,LSL R1
+    4 00000000 E3A00009        LDR              R0, =0x00000009 ;LOAD VALUE 8 T
+                                                            O R0 REGISTER
+    5 00000004 E3A01003        LDR              R1, =0x00000003 ;LOAD THE NO OF
+                                                             TIMES TO BE SHIFTE
+                                                            D
+    6 00000008 E1A02130        MOV              R2,R0,LSR R1 ;R2 WILL BE R0 SHI
+                                                            FTER 3 TIMES
     7 0000000C                 END
 Command Line: --debug --xref --bi --apcs=interwork --depend=Exp2_2.d -oExp2_2.o
  -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1"
