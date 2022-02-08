@@ -1,0 +1,61 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00000        LDR              R0, =0x00000000 ; SOURCE MEMORY
+                                                             LOCATION
+    5 00000004 E3A01C01        LDR              R1, =0x00000100 ; DESTINATION M
+                                                            EMORY LOCATION
+    6 00000008 E3A02004        MOV              R2, #4      ; 4 LOCATIONS FOR 4
+                                                             WORDS 
+    7 0000000C E4903004 
+                       FOR     LDR              R3, [R0], #4 ; MOVE THE RESPECT
+                                                            IVE VALUE TO R3
+    8 00000010 E4813004        STR              R3, [R1], #4 ; STORE R3 TO THE 
+                                                            RESPECTIVE LOCATION
+                                                             
+    9 00000014 E2522001        SUBS             R2,R2,#1    ; DECREMENT THE COU
+                                                            NTER
+   10 00000018 1AFFFFFB        BNE              FOR         ; IF NOT ZERO REPEA
+                                                            T THE LOOP
+   11 0000001C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP3C.d -oEXP3C.o -
+IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
+-list=EXP3C.lst EXP3C.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+FOR 0000000C
+
+Symbol: FOR
+   Definitions
+      At line 7 in file EXP3C.asm
+   Uses
+      At line 10 in file EXP3C.asm
+Comment: FOR used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP3C.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP3C.asm
+   Uses
+      None
+Comment: PROGRAM unused
+3 symbols
+334 symbols in table

@@ -1,0 +1,47 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00010        LDR              R0, =0x00000010 ; SOURCE MEMORY
+                                                             LOCATION
+    5 00000004 E3A010F0        LDR              R1, =0x000000F0 ; DESTINATION M
+                                                            EMORY LOCATION
+    6 00000008 E830003C        LDMDA            R0!, {R2-R5} ; COPIES CONTINUOS
+                                                            LY FROM EXTERNAL TO
+                                                             R2 TO R5
+    7 0000000C E821003C        STMDA            R1!, {R2-R5} ; COPIES CONTINUOS
+                                                            LY FROM R2 TO R5 TO
+                                                             DESTINATION  
+    8 00000010                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP3B.d -oEXP3B.o -
+IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
+-list=EXP3B.lst EXP3B.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP3B.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP3B.asm
+   Uses
+      None
+Comment: PROGRAM unused
+2 symbols
+333 symbols in table
