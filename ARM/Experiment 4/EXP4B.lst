@@ -1,0 +1,62 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM,CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00000        LDR              R0, =0x00000000 ; SOURCE MEMORY
+                                                             LOCATION
+    5 00000004 E3A01050        LDR              R1, =0x00000050 ;
+    6 00000008 E3A03009        MOV              R3, #9      ; 10 LOCATIONS FOR 
+                                                            4 WORDS 
+    7 0000000C E5904000        LDR              R4, [R0]
+    8 00000010 E2800004 
+                       FOR     ADD              R0, R0, #4
+    9 00000014 E5905000        LDR              R5, [R0]    ;
+   10 00000018 E0944005        ADDS             R4,R4,R5
+   11 0000001C 22877001        ADDCS            R7,R7,#1
+   12 00000020 E2533001        SUBS             R3,R3,#1    ; DECREMENT THE COU
+                                                            NTER
+   13 00000024 1AFFFFF9        BNE              FOR         ; IF NOT ZERO REPEA
+                                                            T THE LOOP
+   14 00000028 E4814004        STR              R4, [R1], #4
+   15 0000002C E5817000        STR              R7, [R1]
+   16 00000030                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP4B.d -oEXP4B.o -
+IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
+-list=EXP4B.lst EXP4B.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+FOR 00000010
+
+Symbol: FOR
+   Definitions
+      At line 8 in file EXP4B.ASM
+   Uses
+      At line 13 in file EXP4B.ASM
+Comment: FOR used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP4B.ASM
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP4B.ASM
+   Uses
+      None
+Comment: PROGRAM unused
+3 symbols
+334 symbols in table

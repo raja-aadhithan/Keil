@@ -1,0 +1,43 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM,CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00000        LDR              R0, =0X00000000
+    5 00000004 E8B0001E        LDM              R0!, {R1-R4}
+    6 00000008 E0926004        ADDS             R6,R2,R4
+    7 0000000C E0B15003        ADCS             R5,R1,R3
+    8 00000010 E3A07010        LDR              R7, =0X00000010
+    9 00000014 E8A70060        STM              R7!, {R5-R6}
+   10 00000018                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP4A.d -oEXP4A.o -
+IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
+-list=EXP4A.lst EXP4A.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP4A.ASM
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP4A.ASM
+   Uses
+      None
+Comment: PROGRAM unused
+2 symbols
+333 symbols in table
