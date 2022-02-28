@@ -60,8 +60,3 @@ LOOP15	ADD R7,R7,#1
 		ADDS R0,R0,R0	;TO END
 LOOP32	B LOOP32
 		END 
-		
-		
-		
-		
-		
