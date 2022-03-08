@@ -180,13 +180,13 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>5</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>11</CurrentLine>
+      <CurrentLine>4</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Exp5.asm</PathWithFileName>
-      <FilenameWithoutPath>Exp5.asm</FilenameWithoutPath>
+      <PathWithFileName>.\exp7.asm</PathWithFileName>
+      <FilenameWithoutPath>exp7.asm</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

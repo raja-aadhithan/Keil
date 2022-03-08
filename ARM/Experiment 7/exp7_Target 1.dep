@@ -1,0 +1,2 @@
+Dependencies for Project 'exp7', Target 'Target 1': (DO NOT MODIFY !)
+F (.\exp7.asm)(0x6227417C)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "exp7.lst" --xref -o "exp7.o" --depend "exp7.d")

@@ -1,0 +1,64 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00020        MOV              R0, #32
+    5 00000004 E3A01A01        LDR              R1, =0x00001000
+    6 00000008 E5912000        LDR              R2, [R1]
+    7 0000000C E1B02062 
+                       LOOP    MOVS             R2,R2,RRX
+    8 00000010 22833001        ADDCS            R3,R3,#1
+    9 00000014 E2500001        SUBS             R0,R0,#1
+   10 00000018 1AFFFFFB        BNE              LOOP
+   11 0000001C E2634020        RSB              R4,R3,#32
+   12 00000020 EAFFFFFE 
+                       LOOPE   B                LOOPE
+   13 00000024                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP6.d -oEXP6.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=EXP6.lst EXP6.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file EXP6.asm
+   Uses
+      At line 10 in file EXP6.asm
+Comment: LOOP used once
+LOOPE 00000020
+
+Symbol: LOOPE
+   Definitions
+      At line 12 in file EXP6.asm
+   Uses
+      At line 12 in file EXP6.asm
+Comment: LOOPE used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP6.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP6.asm
+   Uses
+      None
+Comment: PROGRAM unused
+4 symbols
+335 symbols in table

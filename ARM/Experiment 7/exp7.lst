@@ -1,0 +1,59 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00A01        LDR              R0, =0X00001000 ; location of i
+                                                            nput data
+    5 00000004 E4901004        LDR              R1, [R0], #4 ; loading 1st data
+                                                            
+    6 00000008 E4902004        LDR              R2, [R0], #4 ; loaing 2nd data
+    7 0000000C E0833001 
+                       LOOP    ADD              R3,R3,R1    ; add 1st number to
+                                                             result
+    8 00000010 E2522001        SUBS             R2,R2,#1    ; decrementing numb
+                                                            er 2
+    9 00000014 1AFFFFFC        BNE              LOOP        ;loop branch
+   10 00000018 E5803000        STR              R3, [R0]    ; store the result 
+                                                            in the memory locat
+                                                            ion
+   11 0000001C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=exp7.d -oexp7.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=exp7.lst exp7.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file exp7.asm
+   Uses
+      At line 9 in file exp7.asm
+Comment: LOOP used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file exp7.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file exp7.asm
+   Uses
+      None
+Comment: PROGRAM unused
+3 symbols
+334 symbols in table
