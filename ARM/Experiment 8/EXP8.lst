@@ -1,0 +1,79 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00A01        LDR              R0,=0X00001000 ;start of input 
+                                                            address
+    5 00000004 E4901004        LDR              R1, [R0], #4 ; load dividend
+    6 00000008 E4902004        LDR              R2, [R0], #4 ; load divisor
+    7 0000000C E1510002 
+                       LOOP0   CMP              R1,R2       ; compare if divide
+                                                            nd is greater
+    8 00000010 4A000002        BMI              LOOP2       ;if not end loop
+    9 00000014 E2844001        ADD              R4,R4,#1    ; add quotient
+   10 00000018 E0411002        SUB              R1,R1,R2    ; repetitive subtra
+                                                            ction
+   11 0000001C 1AFFFFFA        BNE              LOOP0       ; repeat loop until
+                                                             zero
+   12 00000020 E4804004 
+                       LOOP2   STR              R4, [R0], #4 ; store quotient
+   13 00000024 E5801000        STR              R1, [R0]    ; store reminder
+   14 00000028 EAFFFFFE 
+                       LOOP1   B                LOOP1
+   15 0000002C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=EXP8.d -oEXP8.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=EXP8.lst EXP8.ASM
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP0 0000000C
+
+Symbol: LOOP0
+   Definitions
+      At line 7 in file EXP8.ASM
+   Uses
+      At line 11 in file EXP8.ASM
+Comment: LOOP0 used once
+LOOP1 00000028
+
+Symbol: LOOP1
+   Definitions
+      At line 14 in file EXP8.ASM
+   Uses
+      At line 14 in file EXP8.ASM
+Comment: LOOP1 used once
+LOOP2 00000020
+
+Symbol: LOOP2
+   Definitions
+      At line 12 in file EXP8.ASM
+   Uses
+      At line 8 in file EXP8.ASM
+Comment: LOOP2 used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file EXP8.ASM
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file EXP8.ASM
+   Uses
+      None
+Comment: PROGRAM unused
+5 symbols
+336 symbols in table
