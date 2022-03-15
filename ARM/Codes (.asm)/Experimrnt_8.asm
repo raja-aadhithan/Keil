@@ -12,4 +12,4 @@ LOOP0	CMP R1,R2 ; compare if dividend is greater
 LOOP2	STR R4, [R0], #4 ; store quotient
 		STR R1, [R0] ; store reminder
 LOOP1   B LOOP1
-        END 
+        END  
