@@ -1,0 +1,66 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00A01        LDR              R0,=0X00001000
+    5 00000004 E4D01001        LDRB             R1, [R0], #1
+    6 00000008 E3A0300A        LDR              R3,=0X0000000A
+    7 0000000C E4D02001 
+                       LOOP0   LDRB             R2, [R0], #1
+    8 00000010 E1510002        CMP              R1,R2
+    9 00000014 21A01001        MOVCS            R1,R1
+   10 00000018 31A01002        MOVCC            R1,R2
+   11 0000001C E2533001        SUBS             R3,R3,#1
+   12 00000020 1AFFFFF9        BNE              LOOP0
+   13 00000024 E5801000        STR              R1, [R0]
+   14 00000028 EAFFFFFE 
+                       LOOP1   B                LOOP1
+   15 0000002C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=exam.d -oexam.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=exam.lst exam.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP0 0000000C
+
+Symbol: LOOP0
+   Definitions
+      At line 7 in file exam.asm
+   Uses
+      At line 12 in file exam.asm
+Comment: LOOP0 used once
+LOOP1 00000028
+
+Symbol: LOOP1
+   Definitions
+      At line 14 in file exam.asm
+   Uses
+      At line 14 in file exam.asm
+Comment: LOOP1 used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file exam.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file exam.asm
+   Uses
+      None
+Comment: PROGRAM unused
+4 symbols
+335 symbols in table
