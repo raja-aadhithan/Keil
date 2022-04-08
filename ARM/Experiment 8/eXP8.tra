@@ -10,7 +10,7 @@
 ### ADS-LD Output File: 'eXP8.axf'
 ### ADS-LD Command File: 'eXP8.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'eXP8.lnp', Handle=0x00000794
+### Creating CmdFile 'eXP8.lnp', Handle=0x000006AC
 ### Writing '.lnp' file
 ### ADS-LD Command file 'eXP8.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
