@@ -1,0 +1,68 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00009        MOV              R0, #9
+    5 00000004 E3A01A01 
+                       LOOP1   LDR              R1, =0X1000
+    6 00000008 E2812001        ADD              R2,R1,#1
+    7 0000000C E1A03000        MOV              R3,R0
+    8 00000010 E4D14001 
+                       LOOP2   LDRB             R4, [R1], #1
+    9 00000014 E4D25001        LDRB             R5, [R2], #1
+   10 00000018 E1540005        CMP              R4,R5
+   11 0000001C 25424001        STRCSB           R4, [R2,#-1]
+   12 00000020 25415001        STRCSB           R5, [R1,#-1]
+   13 00000024 E2533001        SUBS             R3,R3,#1
+   14 00000028 1AFFFFF8        BNE              LOOP2
+   15 0000002C E2500001        SUBS             R0,R0,#1
+   16 00000030 1AFFFFF3        BNE              LOOP1
+   17 00000034                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=assen.d -oassen.o -
+IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" -
+-list=assen.lst assen.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP1 00000004
+
+Symbol: LOOP1
+   Definitions
+      At line 5 in file assen.asm
+   Uses
+      At line 16 in file assen.asm
+Comment: LOOP1 used once
+LOOP2 00000010
+
+Symbol: LOOP2
+   Definitions
+      At line 8 in file assen.asm
+   Uses
+      At line 14 in file assen.asm
+Comment: LOOP2 used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file assen.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file assen.asm
+   Uses
+      None
+Comment: PROGRAM unused
+4 symbols
+335 symbols in table

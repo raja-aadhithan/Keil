@@ -1,0 +1,4 @@
+--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+--list "DESEN.lst" --xref -o "DESEN.o" --depend "DESEN.d" "DESEN.ASM"

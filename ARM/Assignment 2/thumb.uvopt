@@ -131,7 +131,7 @@
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0X00001000</ItemText>
+          <ItemText>0X1000</ItemText>
         </Mm>
       </MemoryWindow1>
       <DebugFlag>
@@ -180,13 +180,13 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>11</ColumnNumber>
+      <ColumnNumber>29</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\EXP8.ASM</PathWithFileName>
-      <FilenameWithoutPath>EXP8.ASM</FilenameWithoutPath>
+      <PathWithFileName>.\thumb_1.asm</PathWithFileName>
+      <FilenameWithoutPath>thumb_1.asm</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

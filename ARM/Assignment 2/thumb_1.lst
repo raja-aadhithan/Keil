@@ -1,0 +1,43 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F000C        LDR              R0, =0X00001001
+    5 00000004 E12FFF10        BX               R0
+    6 00000008 E3A01001        MOV              R1,#1
+    7 0000000C E3A02002        MOV              R2,#2
+    8 00000010 E0823001        ADD              R3,R2,R1
+    9 00000014                 END
+              00001001 
+Command Line: --debug --xref --bi --apcs=interwork --depend=thumb_1.d -othumb_1
+.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 
+1" --list=thumb_1.lst thumb_1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file thumb_1.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file thumb_1.asm
+   Uses
+      None
+Comment: PROGRAM unused
+2 symbols
+335 symbols in table

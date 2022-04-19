@@ -1,0 +1,1 @@
+assen.o: assen.asm
