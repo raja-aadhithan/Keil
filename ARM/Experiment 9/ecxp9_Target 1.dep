@@ -1,3 +1,2 @@
 Dependencies for Project 'ecxp9', Target 'Target 1': (DO NOT MODIFY !)
-F (.\assen.asm)(0x625E8F4D)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "assen.lst" --xref -o "assen.o" --depend "assen.d")
-F (.\DESEN.ASM)(0x625E8FB2)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "DESEN.lst" --xref -o "DESEN.o" --depend "DESEN.d")
+F (.\assen.asm)(0x625E91FB)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "assen.lst" --xref -o "assen.o" --depend "assen.d")
