@@ -1,0 +1,91 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F0020        LDR              R0, VALUE1
+    5 00000004 E3A01045        MOV              R1, #'E'    ; ASCII VALUE OF E
+    6 00000008 E4D03001 
+                       LOOP2   LDRB             R3,[R0],#1
+    7 0000000C E1530001        CMP              R3,R1
+    8 00000010 1AFFFFFC        BNE              LOOP2
+    9 00000014 E2933000        ADDS             R3,R3,#0
+   10 00000018 0A000001        BEQ              LOOP1
+   11 0000001C E2877001        ADD              R7,R7,#1
+   12 00000020 EAFFFFF8        B                LOOP2
+   13 00000024 EF000011 
+                       LOOP1   SWI              &11
+   14 00000028         
+   15 00000028                 AREA             PROGRAM, DATA, READONLY
+   16 00000028 00000000 
+                       VALUE1  DCD              STRING      ; DCD = Define Cons
+                                                            tant Double word
+   17 0000002C 45 4D 42 
+              45 44 44 
+              45 44    STRING  DCB              "EMBEDDED"  ; DCB = Define Cons
+                                                            tant Byte
+   18 00000034                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=cmpstring.d -ocmpst
+ring.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL S
+ETA 1" --list=cmpstring.lst cmpstring.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP1 00000024
+
+Symbol: LOOP1
+   Definitions
+      At line 13 in file cmpstring.asm
+   Uses
+      At line 10 in file cmpstring.asm
+Comment: LOOP1 used once
+LOOP2 00000008
+
+Symbol: LOOP2
+   Definitions
+      At line 6 in file cmpstring.asm
+   Uses
+      At line 8 in file cmpstring.asm
+      At line 12 in file cmpstring.asm
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file cmpstring.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file cmpstring.asm
+   Uses
+      None
+Comment: PROGRAM unused
+STRING 0000002C
+
+Symbol: STRING
+   Definitions
+      At line 17 in file cmpstring.asm
+   Uses
+      At line 16 in file cmpstring.asm
+Comment: STRING used once
+VALUE1 00000028
+
+Symbol: VALUE1
+   Definitions
+      At line 16 in file cmpstring.asm
+   Uses
+      At line 4 in file cmpstring.asm
+Comment: VALUE1 used once
+6 symbols
+337 symbols in table

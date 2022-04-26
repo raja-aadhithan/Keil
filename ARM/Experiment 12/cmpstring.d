@@ -1,0 +1,1 @@
+cmpstring.o: cmpstring.asm

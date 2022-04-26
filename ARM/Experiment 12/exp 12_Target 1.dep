@@ -1,0 +1,2 @@
+Dependencies for Project 'exp 12', Target 'Target 1': (DO NOT MODIFY !)
+F (.\cmpstring.asm)(0x6267D62B)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "cmpstring.lst" --xref -o "cmpstring.o" --depend "cmpstring.d")
