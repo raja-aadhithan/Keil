@@ -1,0 +1,80 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E3A00A01        LDR              R0, =0x00001000
+    5 00000004 E4D01001        LDRB             R1,[R0], #1
+    6 00000008 E2911000        ADDS             R1,R1,#0
+    7 0000000C 0A000007        BEQ              LOOP1
+    8 00000010 E1A02001        MOV              R2,R1
+    9 00000014 E2422001        SUB              R2,R2,#1
+   10 00000018 E0070192 
+                       LOOP2   MUL              R7,R2,R1
+   11 0000001C E1A01007        MOV              R1,R7
+   12 00000020 E2522001        SUBS             R2,R2,#1
+   13 00000024 1AFFFFFB        BNE              LOOP2
+   14 00000028 E5C01000        STRB             R1,[R0]
+   15 0000002C EA000001        B                LOOP3
+   16 00000030 E3A08001 
+                       LOOP1   MOV              R8,#1
+   17 00000034 E5C08000        STRB             R8,[R0]
+   18 00000038 EAFFFFFE 
+                       LOOP3   B                LOOP3
+   19 0000003C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=factorial.d -ofacto
+rial.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL S
+ETA 1" --list=factorial.lst factorial.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP1 00000030
+
+Symbol: LOOP1
+   Definitions
+      At line 16 in file factorial.asm
+   Uses
+      At line 7 in file factorial.asm
+Comment: LOOP1 used once
+LOOP2 00000018
+
+Symbol: LOOP2
+   Definitions
+      At line 10 in file factorial.asm
+   Uses
+      At line 13 in file factorial.asm
+Comment: LOOP2 used once
+LOOP3 00000038
+
+Symbol: LOOP3
+   Definitions
+      At line 18 in file factorial.asm
+   Uses
+      At line 15 in file factorial.asm
+      At line 18 in file factorial.asm
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file factorial.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file factorial.asm
+   Uses
+      None
+Comment: PROGRAM unused
+5 symbols
+336 symbols in table

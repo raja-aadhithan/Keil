@@ -1,0 +1,1 @@
+string.o: string.asm

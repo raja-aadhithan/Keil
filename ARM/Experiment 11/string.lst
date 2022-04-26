@@ -1,0 +1,87 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F0014        LDR              R0, VALUE1
+    5 00000004 E4D03001 
+                       LOOP2   LDRB             R3,[R0],#1
+    6 00000008 E2933000        ADDS             R3,R3,#0
+    7 0000000C 0A000001        BEQ              LOOP1
+    8 00000010 E2877001        ADD              R7,R7,#1
+    9 00000014 EAFFFFFA        B                LOOP2
+   10 00000018 E2800000 
+                       LOOP1   ADD              R0,R0,#0
+   11 0000001C         
+   12 0000001C                 AREA             PROGRAM, DATA, READONLY
+   13 0000001C 00000000 
+                       VALUE1  DCD              STRING      ; DCD = Define Cons
+                                                            tant Double word
+   14 00000020 45 4D 42 
+              45 44 44 
+              45 44    STRING  DCB              "EMBEDDED"  ; DCB = Define Cons
+                                                            tant Byte
+   15 00000028                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=string.d -ostring.o
+ -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1"
+ --list=string.lst string.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP1 00000018
+
+Symbol: LOOP1
+   Definitions
+      At line 10 in file string.asm
+   Uses
+      At line 7 in file string.asm
+Comment: LOOP1 used once
+LOOP2 00000004
+
+Symbol: LOOP2
+   Definitions
+      At line 5 in file string.asm
+   Uses
+      At line 9 in file string.asm
+Comment: LOOP2 used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file string.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file string.asm
+   Uses
+      None
+Comment: PROGRAM unused
+STRING 00000020
+
+Symbol: STRING
+   Definitions
+      At line 14 in file string.asm
+   Uses
+      At line 13 in file string.asm
+Comment: STRING used once
+VALUE1 0000001C
+
+Symbol: VALUE1
+   Definitions
+      At line 13 in file string.asm
+   Uses
+      At line 4 in file string.asm
+Comment: VALUE1 used once
+6 symbols
+337 symbols in table
