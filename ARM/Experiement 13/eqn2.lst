@@ -1,0 +1,79 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F0024        LDR              R0, X
+    5 00000004 E59F1024        LDR              R1, Y
+    6 00000008 E59F2024        LDR              R2, Z
+    7 0000000C E3A07006        MOV              R7, #6      ;
+    8 00000010 E0803001        ADD              R3,R0,R1    ; X+Y
+    9 00000014 E0040793        MUL              R4,R3,R7    ; 6(X+Y) 
+   10 00000018 E1A02082        MOV              R2,R2,LSL #1 ; 2Z
+   11 0000001C E0925004        ADDS             R5,R2,R4    ; 6(X+Y) + 2Z
+   12 00000020 22855005        ADDCS            R5,R5,#5    ; 
+   13 00000024 32855004        ADDCC            R5,R5,#4    ;
+   14 00000028 EF000011        SWI              &11
+   15 0000002C                 AREA             PROGRAM, DATA, READONLY
+   16 0000002C 00000003 
+                       X       DCD              &3
+   17 00000030 00000001 
+                       Y       DCD              &1
+   18 00000034 00000002 
+                       Z       DCD              &2
+   19 00000038                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=eqn2.d -oeqn2.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=eqn2.lst eqn2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file eqn2.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file eqn2.asm
+   Uses
+      None
+Comment: PROGRAM unused
+X 0000002C
+
+Symbol: X
+   Definitions
+      At line 16 in file eqn2.asm
+   Uses
+      At line 4 in file eqn2.asm
+Comment: X used once
+Y 00000030
+
+Symbol: Y
+   Definitions
+      At line 17 in file eqn2.asm
+   Uses
+      At line 5 in file eqn2.asm
+Comment: Y used once
+Z 00000034
+
+Symbol: Z
+   Definitions
+      At line 18 in file eqn2.asm
+   Uses
+      At line 6 in file eqn2.asm
+Comment: Z used once
+5 symbols
+336 symbols in table

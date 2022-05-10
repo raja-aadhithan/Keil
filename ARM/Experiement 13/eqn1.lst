@@ -1,0 +1,89 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         MAIN
+    4 00000000 E59F0024        LDR              R0, X
+    5 00000004 E59F1024        LDR              R1, Y
+    6 00000008 E59F2024        LDR              R2, A
+    7 0000000C E59F3024        LDR              R3, K
+    8 00000010 E0040191        MUL              R4,R1,R1    ; y^2
+    9 00000014 E0050090        MUL              R5,R0,R0    ; x^2
+   10 00000018 E0060493        MUL              R6,R3,R4    ; k*y^2
+   11 0000001C E0070295        MUL              R7,R5,R2    ; a*x^2
+   12 00000020 E0978006        ADDS             R8,R7,R6    ; a*x^2 + k*y^2
+   13 00000024 22899001        ADDCS            R9,R9,#1
+   14 00000028 EF000011        SWI              &11
+   15 0000002C                 AREA             PROGRAM, DATA, READONLY
+   16 0000002C 00000003 
+                       X       DCD              &3
+   17 00000030 00000001 
+                       Y       DCD              &1
+   18 00000034 00000002 
+                       A       DCD              &2
+   19 00000038 00000002 
+                       K       DCD              &2
+   20 0000003C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=eqn1.d -oeqn1.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=eqn1.lst eqn1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+A 00000034
+
+Symbol: A
+   Definitions
+      At line 18 in file eqn1.asm
+   Uses
+      At line 6 in file eqn1.asm
+Comment: A used once
+K 00000038
+
+Symbol: K
+   Definitions
+      At line 19 in file eqn1.asm
+   Uses
+      At line 7 in file eqn1.asm
+Comment: K used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 3 in file eqn1.asm
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file eqn1.asm
+   Uses
+      None
+Comment: PROGRAM unused
+X 0000002C
+
+Symbol: X
+   Definitions
+      At line 16 in file eqn1.asm
+   Uses
+      At line 4 in file eqn1.asm
+Comment: X used once
+Y 00000030
+
+Symbol: Y
+   Definitions
+      At line 17 in file eqn1.asm
+   Uses
+      At line 5 in file eqn1.asm
+Comment: Y used once
+6 symbols
+337 symbols in table

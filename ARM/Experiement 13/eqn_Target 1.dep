@@ -1,0 +1,2 @@
+Dependencies for Project 'eqn', Target 'Target 1': (DO NOT MODIFY !)
+F (.\eqn2.asm)(0x6279E4E6)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include --list "eqn2.lst" --xref -o "eqn2.o" --depend "eqn2.d")
